@@ -19,38 +19,12 @@
 
     <button onclick="showMessage()">tha kod brn ni khue bab huk kh na 😘</button>
     <p id="loveMessage" class="hidden">kh huk bab der lok thung bai khrng kh khue bab na huk bab laiy der💘</p>
-
-    <!-- Background music -->
-    <!-- <audio autoplay loop>
-      <source src="https://youtu.be/Ir_qJteOI3c?si=9NxarVWhQ-LnXTvF" type="audio/mpeg">
-    </audio> -->
-
-    <!-- <div class="">
-      <iframe width="1" height="1"
-        src="https://www.youtube.com/embed/Ir_qJteOI3c?autoplay=1&loop=1&playlist=Ir_qJteOI3c" title="YouTube video"
-        frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-    </div> -->
-    <div id="music-container"></div>
+    <div id="video-container"></div>
     <button onclick="playMusic()">Fung pheng 💕</button>
   </div>
 
   <!-- JavaScript for hearts and interaction -->
   <script src="script.js"></script>
-  <script>
-    function playMusic() {
-      const container = document.getElementById('music-container');
-      if (container.querySelector('iframe')) return;
-      const iframe = document.createElement('iframe');
-      iframe.width = "1";
-      iframe.height = "1";
-      iframe.src = "https://www.youtube.com/embed/Ir_qJteOI3c?autoplay=1&loop=1&playlist=Ir_qJteOI3c";
-      iframe.title = "YouTube video";
-      iframe.frameBorder = "0";
-      iframe.allow = "autoplay; encrypted-media";
-      iframe.allowFullscreen = true;
-      container.appendChild(iframe);
-    }
-  </script>
 </body>
 
 </html>
