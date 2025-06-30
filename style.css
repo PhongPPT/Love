@@ -1,0 +1,121 @@
+/* Basic body styling */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Phetsarath OT', sans-serif;
+  background: linear-gradient(to top right, #ffccff, #ffe6f0);
+  overflow-x: hidden;
+}
+
+/* Centered main container */
+.container {
+  max-width: 700px;
+  margin: 100px auto;
+  background: #fff;
+  padding: 40px;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(255, 0, 128, 0.3);
+}
+
+/* Title */
+h1 {
+  color: #e60073;
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+/* Subtitle text */
+.subtitle {
+  font-size: 20px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Button styling */
+button {
+  background-color: #ff66b2;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #ff3385;
+}
+
+/* Hidden message initially */
+#loveMessage {
+  font-size: 20px;
+  color: #99004d;
+  margin-top: 20px;
+  transition: opacity 1s ease-in-out;
+}
+
+.hidden {
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+/* Hearts animation container */
+#heart-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Each heart */
+.heart {
+  position: absolute;
+  bottom: -50px; /* Start below screen */
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  transform: rotate(45deg);
+  animation: floatUp 8s linear infinite;
+  opacity: 0.8;
+  z-index: 2;
+}
+
+/* Top curves of heart */
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -10px;
+  left: 0;
+}
+
+.heart::after {
+  left: -10px;
+  top: 0;
+}
+
+/* Floating animation from bottom to top */
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) rotate(45deg) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120vh) rotate(720deg) scale(1.5);
+    opacity: 0;
+  }
+}
