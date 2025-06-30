@@ -42,10 +42,11 @@ setInterval(createHeart, 300);
 function playMusic() {
   const container = document.getElementById("video-container");
 
-  if (container.querySelector("iframe")) return;
+  // Show the hidden container
+  container.classList.add("show");
 
-  const wrapper = document.createElement("div");
-  wrapper.className = "video-wrapper";
+  // Prevent adding iframe more than once
+  if (container.querySelector("iframe")) return;
 
   const iframe = document.createElement("iframe");
   iframe.src =
@@ -55,6 +56,16 @@ function playMusic() {
   iframe.allow = "autoplay; encrypted-media";
   iframe.allowFullscreen = true;
 
-  wrapper.appendChild(iframe);
-  container.appendChild(wrapper);
+  container.appendChild(iframe);
+}
+
+function showLovePopup() {
+  Swal.fire({
+    title: "💘 kh huk bab na 💘",
+    text: "khue lok thung bai khrng kh 💖",
+    icon: "success",
+    confirmButtonText: "🥰 kh huk bab t sout leiy der",
+    background: "#fff0f5",
+    color: "#d63384",
+  });
 }
