@@ -42,17 +42,19 @@ setInterval(createHeart, 300);
 function playMusic() {
   const container = document.getElementById("video-container");
 
-  // Prevent duplicate iframe
   if (container.querySelector("iframe")) return;
+
+  const wrapper = document.createElement("div");
+  wrapper.className = "video-wrapper";
 
   const iframe = document.createElement("iframe");
   iframe.src =
     "https://www.youtube.com/embed/Ir_qJteOI3c?autoplay=1&loop=1&playlist=Ir_qJteOI3c";
   iframe.title = "YouTube video player";
-  iframe.allow =
-    "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
-  iframe.referrerPolicy = "strict-origin-when-cross-origin";
+  iframe.frameBorder = "0";
+  iframe.allow = "autoplay; encrypted-media";
   iframe.allowFullscreen = true;
 
-  container.appendChild(iframe);
+  wrapper.appendChild(iframe);
+  container.appendChild(wrapper);
 }
