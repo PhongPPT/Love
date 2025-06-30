@@ -69,3 +69,14 @@ function showLovePopup() {
     color: "#d63384",
   });
 }
+
+function showMessagePopup() {
+  Swal.fire({
+    title: "💘 kh huk bab na 💘",
+    text: "kh hu nar var xuang ni bab khn ngarm khrng kh trng jer kup bun ha laiy2 yarng khr hai bab su2 na kh khn ni ja u khieng kharng bab pai ta lrt na 💖",
+    icon: "success",
+    confirmButtonText: "🥰 kh huk bab t sout leiy der",
+    background: "#fff0f5",
+    color: "#d63384",
+  });
+}
